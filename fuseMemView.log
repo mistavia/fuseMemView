@@ -1,6 +1,0 @@
-Initialising new log file
-[22:18:35] : Starting application
-[22:18:35] : memory_initialise() ...
-[22:18:35] : memory_initialise() OK
-[22:18:35] : window_setup()
-[22:18:35] : socket_setup_bindings()
