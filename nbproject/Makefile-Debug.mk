@@ -42,6 +42,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/memory.o \
 	${OBJECTDIR}/network.o \
 	${OBJECTDIR}/socket.o \
+	${OBJECTDIR}/socketFuse.o \
 	${OBJECTDIR}/window.o
 
 
@@ -102,6 +103,11 @@ ${OBJECTDIR}/socket.o: socket.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -I/usr/include -I/usr/share/glib-2.0 -include /usr/include/ncurses.h -include /usr/include/netdb.h `pkg-config --cflags glib-2.0` `pkg-config --cflags ncurses` `pkg-config --cflags gio-2.0` -std=c99  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/socket.o socket.c
+
+${OBJECTDIR}/socketFuse.o: socketFuse.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -I/usr/include -I/usr/share/glib-2.0 -include /usr/include/ncurses.h -include /usr/include/netdb.h `pkg-config --cflags glib-2.0` `pkg-config --cflags ncurses` `pkg-config --cflags gio-2.0` -std=c99  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/socketFuse.o socketFuse.c
 
 ${OBJECTDIR}/window.o: window.c 
 	${MKDIR} -p ${OBJECTDIR}

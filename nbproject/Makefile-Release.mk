@@ -42,6 +42,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/memory.o \
 	${OBJECTDIR}/network.o \
 	${OBJECTDIR}/socket.o \
+	${OBJECTDIR}/socketFuse.o \
 	${OBJECTDIR}/window.o
 
 
@@ -103,6 +104,11 @@ ${OBJECTDIR}/socket.o: socket.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/socket.o socket.c
+
+${OBJECTDIR}/socketFuse.o: socketFuse.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/socketFuse.o socketFuse.c
 
 ${OBJECTDIR}/window.o: window.c 
 	${MKDIR} -p ${OBJECTDIR}
