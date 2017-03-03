@@ -37,7 +37,7 @@ extern "C" {
   (byte & 0x01 ? '1' : '0') 
 
 #define VA_PROGRAM_NAME "fuseMemView"
-#define VA_VERSION_NUM  "2.01"
+#define VA_VERSION_NUM  "1.00 alpha"
 
     
 // I'm happy with these variables names ...
