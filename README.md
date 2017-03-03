@@ -11,6 +11,9 @@ The project should compile pretty easily using the make command, but you will ne
 # How it works
 This tool essentially receives 6 character TCP-based packets from a modified FUSE application (see below). The bytes (all sent as hex chrs) are a 2-byte memory location, followed by a single byte value. As the packet is sent as a text representation (for ease of debugging), each representation of a byte actually takes 2 characters - hence a change to the first byte of the screen memory (16384) would be sent as '4000XX', where XX is the value.
 
+#Connecting
+This version only supports connections on the same machine (127.0.0.1) and hasn't been tested running across a network, but you could in theory by changing the IP address in both socket.c and socketFuse.c and compiling both applications.
+
 # Setting up FUSE
 To make this work with FUSE, you will need to download a copy of the FUSE source code from https://sourceforge.net/projects/fuse-emulator/files/fuse/. It is recommended that you ensure you can build the project before making any modifications - note you will need the libspectrum libraries to compile the source code (see the readme on the sourceforge page).
 
